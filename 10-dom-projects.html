@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM- Subscribe Button</title>
+  <style>
+    .subs-style{
+      color: white;
+      background-color: #FF0000;
+      border: none;
+      height: 30px;
+      border-radius: 20px;
+      width: 100px;
+      font-family: sans-serif;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 100px;
+    }
+    .is-subscribed{
+      background-color: white;
+      color: #FF0000;
+      border-style:ridge;
+      border-color: black;
+    }
+    body{
+      font-family: Arial;
+      font-weight: bold;
+    }
+
+    .calculator{
+      background-color: #2bc80b;
+      color: white;
+      border-width: 0.1px;
+      border-radius:20px;
+      padding: 11px 25px;
+    }
+    .calc{
+      font-family: Arial;
+      font-weight: normal;
+      font-size: small;
+    }
+    .js-input{
+      padding: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button class="subs subs-style" onclick="
+    subscribe();">subscribe</button><br>
+
+  <p>Amazon Shipping Calculator</p>
+  <input type="number" name="js-input" id="js-input" class="js-input" placeholder="Cost of Order" onkeydown="handleCostkeydown(event)" >  
+
+  <button class="calculator" onclick="calculateTotal();">calculate</button>
+
+  <p class="calc"></p>
+
+
+
+  
+  <script>
+    function subscribe(){
+      const buttonElement = document.querySelector('.subs');
+      
+      let subs_count=0;
+
+      if(buttonElement.innerHTML === 'subscribe'){
+        buttonElement.innerHTML = 'subscribed';
+        //alert('Subscribed');
+        //adding class
+        buttonElement.classList.add('is-subscribed');
+      }else{
+        buttonElement.innerHTML = 'subscribe';
+        //alert('Unsubscribed');
+        //removing added class
+        buttonElement.classList.remove('is-subscribed');
+      }
+    }
+
+    //amazon shipping calculator
+    function handleCostkeydown(){
+      //console.log( event.key);
+      if(event.key == 'Enter'){
+            calculateTotal();
+          }
+    }
+
+    function calculateTotal(){
+      const inputElementValue = document.querySelector('.js-input');
+      //value collected from querySelector will always be string (type Coresion)
+      let value = Number(inputElementValue.value);//converting to number form type cooersion
+      //console.log(typeof value)
+      if(value.lenght != 0){
+        if(value <= 40){
+        value =value+ 10;
+        }
+        document.querySelector('.calc').innerHTML = `Total cost: $${value}`;
+      }else{
+        //alert('Enter Item Cost');
+        document.querySelector('.calc').innerHTML = 'WARNING: Enter-Item-Cost';
+      }
+      
+    }
+  </script>
+</body>
+</html>

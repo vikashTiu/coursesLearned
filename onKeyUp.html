@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>onKeyUp</title>
+</head>
+<body>
+  <input type="text" onkeyup="onKeyUp(event)" placeholder="Enter something">
+  <p class="p"></p>
+  <script>
+    function onKeyUp(){
+      var value = event.target.value;
+      //console.log(value);
+      document.querySelector('.p').innerHTML = value;
+    }
+  </script>
+</body>
+</html>

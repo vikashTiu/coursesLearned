@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    Codes for AddEventListener
+  </h1>
+  <button id="try">try</button><br>
+  <button id="hello">hello</button><br>
+  <button id="myBtn">BUTTON</button>
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <h2>Calculator</h2>
+  <input type="number" id="num1"> <input type="text" id="operator"><input type="number" id="num2"><br>
+  <button id="calculate">calculate</button>
+  <p id="result"></p>
+  <script>
+
+    document.getElementById('try').addEventListener("click",displayDate);
+    document.getElementById('hello').addEventListener("click",function(){alert('Hello World');});
+
+    let x = document.getElementById('myBtn');
+    x.addEventListener("click",func1);
+    x.addEventListener("mouseover",func2);
+    x.addEventListener("mouseout",func3);
+
+    //window object (resizing)
+    window.addEventListener("resize",function(){
+      document.getElementById('demo1').innerHTML = "Reaizing (between 0 & 1) : "+ Math.random();
+    })
+
+
+    //Functions
+    function displayDate(){
+      document.getElementById('demo').innerHTML += Date()+"<br>" ;
+    }
+
+    function func1(){
+      document.getElementById('demo').innerHTML += 'Clicked!! <br>';
+    }
+
+    function func2(){
+      document.getElementById('demo').innerHTML += 'MouseOver!! <br>';
+    }
+
+    function func3(){
+      document.getElementById('demo').innerHTML += 'MouseOut <br>';
+    }
+    
+
+    //calculator 
+    var num1 = parseFloat(document.getElementById('num1').value);
+    console.log(num1);
+    var num1 = parseFloat(document.getElementById('num2').value);
+    let operator = document.getElementById('operator').value;
+
+    document.getElementById('calculate').addEventListener("click", function(){
+      calculator(num1,operator,num2);
+    });
+    
+
+    function calculator(num1,operator,num2){
+      var result;
+      switch(operator){
+        case "+":
+          result = num1 + num2;
+          break;
+        case "-": 
+          result = num1 - num2;
+          break;
+        case "*": 
+          result = num1 * num2;
+          break;
+        case "/":
+          result = num1/num2;
+          break;
+        default:
+          result = "Invalid Operator";
+          break;
+      }
+      return result;
+      document.getElementById('result').innerHTML = result;
+    }
+    
+  </script>
+</body>
+</html>

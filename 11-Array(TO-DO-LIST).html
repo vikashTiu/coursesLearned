@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-Array(TO-DO-LIST)</title>
+</head>
+<body>
+    <p>Todo List 1</p>
+    <input placeholder="Todo name" class="js-name-input">
+    <button onclick="addTodo();">Add</button>
+    <p>Your List :</p>
+    <div class="js-todo-list"></div>
+
+    <script >
+        const todoList=[];
+        renderTodolist();
+
+        //function for Generating HTML
+        function renderTodolist(){
+            let todoListHTML = '';
+
+            for(let i=0; i<todoList.length; i++){
+                //const todo = todoList[i];
+                const html = `<div> ${i+1}. ${todoList[i]}</div>`;
+                todoListHTML += html;
+            }
+            console.log(todoListHTML);
+            document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+        }
+
+
+        function addTodo(){
+            const inputElement = document.querySelector('.js-name-input');
+            const name = inputElement.value;
+            console.log(name);
+            todoList.push(name);
+            console.log(todoList);
+            inputElement.value = '';
+            renderTodolist();
+        }
+        
+    </script>
+</body>
+</html>

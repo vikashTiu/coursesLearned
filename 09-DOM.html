@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM(Document Object Model)</title>
+</head>
+<body>
+  <button>Helo</button>
+
+  <!--this button will not be identtified by the document.querySelector-->
+  <button class="js-button">2nd button</button>
+  <script>
+    
+    /*
+    document.body.innerHTML='hello';
+    document.title = 'Changed';
+    console.log(document.body);
+    console.log(typeof document.body);
+    console.log(document.body.innerHTML);
+    console.log(typeof document.body.innerHTML);
+
+    //innerHTML gives full control of HTML to script
+    document.body.innerHTML = '<button>changed button</button>'
+    */
+
+    //Document Methods(Functions of document method)
+    console.log(typeof document.querySelector('button'));
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button').innerHTML='changed';
+
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+    console.log(typeof buttonElement);
+    console.log(document.querySelector('.js-button').innerHTML);
+    document.querySelector('.js-button').innerHTML = "changed second button";
+
+
+
+    
+  </script>
+</body>
+</html>

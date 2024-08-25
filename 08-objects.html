@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08-objects</title>
+</head>
+<body>
+  <script>
+    /*
+    const product={
+      name : 'socks',
+      price : 1090,
+      'delivery-time': '1-day',// - notation is used under single quote because , it is used as a substraction in javascript
+      rating:{
+        stars:4.5,
+        count:85
+      },
+
+      //function inside object
+      fun: function func(){
+        console.log('Function inside object');
+      }
+
+    };
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+    product.name = 'cotton socks';
+    console.log(product.name);
+    //adding new property
+    product.newProperty = true;
+    console.log(product);
+
+    //delete property
+    delete product.newProperty;
+    console.log(product);
+
+    console.log(typeof product);
+    //square notation to access the data
+    console.log(product['name']);
+    console.log(product['delivery-time']);
+    //accessing nested object using dot notation
+    console.log(product.rating.count);
+
+    //accessing functioin inside the object
+    product.fun();
+    console.log(typeof console);//console-Object  log-function inside the console object
+
+    //converting JS object to JSON
+    const jsStringify = JSON.stringify(product);
+    console.log(jsStringify);
+    //converting JSON to JS Object
+    console.log(JSON.parse(jsStringify));
+
+    const object1 ={
+      name: 'mobilephone',
+      companyName : 'Samsung'
+    }
+    console.log(object1);
+    const newStr = JSON.stringify(object1);
+    console.log(newStr);
+    console.log( JSON.parse(newStr));
+    */ 
+
+    const obj1 = {
+      message : 'Hello'
+    }
+    obj1.message = 'Hello mathafaka';
+    console.log(obj1);
+    const obj2 = obj1;
+    console.log(obj2);
+
+    const obj3 ={
+      message : 'heyi'
+    }
+    console.log(obj2 === obj1);
+
+    //Destructuring
+    const obj4 ={
+      msg: 'Heyi',
+      price : 799
+    };
+    
+    const {msg,price} = obj4;//Destructuring shortcut
+    console.log(msg,price);
+
+    const obj5 ={
+      msg,
+      /*
+      method: function func1(){
+        console.log('method');
+      }
+      */
+      //shorthand method syntax
+      method(){
+        console.log('Short hand method function in use');
+      }
+    }
+    console.log(obj5);
+    obj5.method();
+
+
+  </script>
+</body>
+</html>

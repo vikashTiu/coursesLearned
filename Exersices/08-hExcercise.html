@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07-Exercise</title>
+</head>
+<body>
+
+  <script>
+    /*
+    function greet(name){
+      
+      if(!name){
+        console.log('Hii there!');
+      }else{
+        console.log('Helloo ',name);
+      }
+
+    }
+    greet();*/
+    let fahrenheit = '';
+    function convertToFahrenheit(celsius){
+      fahrenheit = (celsius * 9/5)+  32;
+      return fahrenheit;
+    }
+    
+    let celsius= '';
+    function convertToCelsius(fahrenheit){
+      celsius = (fahrenheit - 32) * 5/9;
+      return celsius;
+
+    }
+    
+    let newDegree = '';
+    function convertTemperature(degree,unit){
+      if(unit === 'C'){
+        newDegree = convertToFahrenheit(degree);
+        localStorage.setItem('tempF',newDegree);
+        console.log(`${localStorage.getItem('tempF')}F`);
+      }else if(unit === 'F'){
+        newDegree = convertToCelsius(degree);
+        localStorage.setItem('tempC',newDegree);
+        if(localStorage.getItem('tempC') === null){
+          localStorage.setItem('tempC',0);
+        }
+        console.log(`${localStorage.getItem('tempC')}C`);
+      }
+    }
+
+    convertTemperature(100,'C')
+    convertTemperature( 100,'F')
+  </script>
+</body>
+</html>

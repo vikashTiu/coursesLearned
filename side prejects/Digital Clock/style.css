@@ -1,0 +1,38 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #282c34;
+  margin: 0;
+  color: white;
+  font-family: Arial,  sans-serif;
+}
+
+.clock{
+  background: #333;
+  border: 5px solid #ff6347;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.time{
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+
+@keyframes blink{
+  0% ,50% , 100% {
+    opacity: 1;
+  }
+  25%, 75%{
+    opacity: 0;
+  }
+}
+
+.clock::after{
+  content: ":";
+  animation: blink 1s infinite ;
+}

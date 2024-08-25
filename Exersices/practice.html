@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+</head>
+<body>
+  <button class="myButton" name="Button 1">Button 1</button>
+  <button class="myButton" name="Button 2">Button 2</button>
+  <button class="myButton" name="Button 3">Button 3</button>
+
+  <script>
+  // JavaScript code
+  var buttons = document.getElementsByClassName("myButton");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", handleButtonClick);
+  }
+
+  function handleButtonClick(event) {
+    var button = event.target;
+    var buttonName = button.getAttribute("name");
+    console.log(buttonName);
+  }
+  </script>
+</body>
+</html>

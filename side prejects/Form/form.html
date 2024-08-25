@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <form >
+    <h1>SignUP Form</h1>
+
+    <fieldset>
+      <legend>Personal Info:</legend>
+      <div>
+        <label for="name">Name:</label>
+        <input type="name" name="name" id="name"  placeholder="Name"/>
+      </div>
+
+      <div>
+        <label for="birthday">Birthday:</label>
+        <input type="date" name="birthday" id="birthday" />
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Credentials:</legend>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email"  placeholder="Enter your Email"/>
+      </div>
+      
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Enter Password" name="password" id="password" />  
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Terms & Conditions:</legend>
+      <div>
+        <p>Do you want to recieve updates by mail?</p>
+        <input type="radio" name="updates" id="updates-yes" value="yes" />
+        <label for="updates-yes">YES</label>
+  
+        <input type="radio" name="updates" id="updates-no" value="no" checked />
+        <label for="updates-no">NO</label>
+      </div>
+      <div>
+        <input type="checkbox" name="accept-terms" id="accept-terms" value="accept" />
+        <label for="accept-terms">I accept our Terms & Condition</label>
+      </div>
+    </fieldset>
+
+    
+
+    <input type="submit" />
+  </form>
+</body>
+</html>

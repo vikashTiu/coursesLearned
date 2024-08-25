@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09-Exercise</title>
+</head>
+<body>
+  <button class="button" onclick="nine_a()">9a</button>
+  <button class="button_b" onclick="nine_b()">9b</button><br>
+  <button class="heads" onclick="heads()">Heads</button>
+  <button class="Tails" onclick="tails()">Tails</button><br>
+  <input type="text" placeholder="enter name" class="name" onkeydown="onclickDisplayname()" >
+  <button onclick="displayName();">submit</button>
+  <p class="p"></p>
+  <script>
+    function nine_a(){
+      console.log(document.querySelector('.button').innerHTML);
+    }
+    function nine_b(){
+      document.querySelector('.button_b').innerHTML = '9b Done';
+    }
+
+    function heads(){
+      document.querySelector('.p').innerHTML = 'You choose: Heads';
+    }
+    function tails(){
+      document.querySelector('.p').innerHTML = 'You choose: Tails';
+    }
+
+    //input functions
+    function displayName(){
+      //console.log('hello');
+      let enterName =  document.querySelector('.name').value;
+      console.log(enterName);
+      document.querySelector('.p').innerHTML = 'Your name is: '+ enterName;
+    }
+
+    function onclickDisplayname(){  
+      if(event.key === 'Enter'){
+        displayName();
+      }
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width= device-width
+  , initial-scale=1.0">
+  <title>9i-exercise-challenge</title>
+</head>
+<body>
+  <h1 id="myHeadLine">--Cart--</h1>
+
+  <button class="myButton1" onclick="cart(event)" name="Cart Quantity">Cart Quantity</button>
+  <button class="myButton2" onclick="cart(event)" name="Add to Cart">Add to Cart</button>
+  <button class="myButton3" onclick="cart(event)" name="+2">+2</button>
+  <button class="myButton4" onclick="cart(event)" name="+3">+3</button>
+  <button class="myButton5" onclick="cart(event)" name="+4">+4</button>
+  <button class="myButton6" onclick="cart(event)" name="+5">+5</button>
+  <button class="myButton7" onclick="cart(event)" name="Remove from Cart">Remove from Cart</button>
+  <button class="myButton8" onclick="cart(event)" name="-2">-2</button>
+  <button class="myButton9" onclick="cart(event)" name="-3">-3</button>
+
+  <p class="p"></p>
+  <script>
+    document.getElementById("myHeadLine").style.textAlign = "center";
+
+    var items = 0;
+    function cart(event){
+      var button = event.target;
+      var buttonName = button.getAttribute("name"); ;
+      //console.log(buttonName);
+      switch(buttonName){
+        case "Add to Cart":
+        return document.querySelector('.p').innerHTML = 'Cart Quantitty :'+items;
+        break;
+
+        case "Add to Cart":
+        items+=1;
+        break;
+
+        case "+2":
+        items+=2;
+        break;
+
+        case "+3":
+        items+=3;
+        break;
+
+        case "+4":
+        items+=4;
+        break;
+
+        case "+5":
+        items+=5;
+        break;
+
+        case "Remove from Cart":
+        items -=1;
+        break;
+
+        case "-2":
+        items -=2;
+        break;
+
+        case "-3":
+        items -=3;
+        break;
+
+      }
+      if(items<=0){
+        items = 0;
+        return document.querySelector('.p').innerHTML = '-- Cart is Empty --';
+      }
+      //console.log(document.querySelector('.myButton').innerHTML);
+      return document.querySelector('.p').innerHTML = 'Cart Quantitty :'+items;
+    }
+
+  </script>
+</body>
+</html>

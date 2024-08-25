@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    function myfunction(){
+      document.getElementById('demo').innerHTML="Paragraph changed";
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>My first web page</h1>
+  <p>
+    this is a paragraph
+  </p>
+  <p id="demo"></p>
+  <button onclick="window.alert(y)"  type="button">addition</button><br>
+  <button onclick="myfunction()" type="button">change para</button><br>
+  <button onclick="window.print()" type="button">print this page</button>
+  <button class="demo1">lower paragraph</button>
+  <script>
+    let x , y;
+    x=6;
+    y=x*10;
+    document.getElementById('demo1').innerHTML = y;
+
+  </script>
+
+</body>
+</html>

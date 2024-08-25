@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excercise-08</title>
+</head>
+<body>
+  <script>
+    const product ={
+      name: 'Basketball',
+      price: 2095
+    }
+    product.price = product.price + 500;
+    product['Deliver-time'] = '3 days';//Bracket notation
+    console.log(product);
+
+    const prod1={
+      name: 'Tennis Ball',
+      price: 100
+    }
+    const prod2={
+      name: 'Tennis Ball',
+      price: 120
+    }
+    function comparePrice(){
+      if(prod1.price>prod2.price){
+        return console.log(prod2)
+      }else if(prod2.price>prod1.price){
+        return console.log(prod1)
+      }else if(prod1.price===prod2.price){
+        return console.log('Both Products have same price');
+      }
+    }
+    comparePrice();
+
+    function isSameProduct(){
+      console.log(prod1.name===prod2.name && prod1.price===prod2.price);
+    }
+    isSameProduct();
+
+    const str = 'GoodMorning';
+    console.log(str.toLocaleLowerCase());//
+    const repeatStr = str.repeat(3);
+    console.log(repeatStr);
+  </script>
+</body>
+</html>
