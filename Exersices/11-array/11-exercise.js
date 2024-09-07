@@ -136,18 +136,62 @@ countPositive([1,-9,22,-88,8]);
 
 function minMax(nums){
     let min,max;
-    if(nums){
-        max=Math.max(...nums);
-        min=Math.min(...nums);
-    }else{
-        min=NaN;
-        max=NaN;
-    }
-    
-    
+ 
+    max=Math.max(...nums);
+    min=Math.min(...nums);
+ 
     console.log(`min:- ${min}\nmax:- ${max}`);
 }
-minMax([]);
+minMax([1,22,3,-645,66,7,2456]);
 
-let number = null;
-console.log('Type of number id:'+number);
+
+//11m- MINMAX  function handling null value
+function minMAx1(arr){
+    arr.sort((a,b)=>a-b);
+    let min=arr[0];
+
+    arr.sort((a,b)=>b-a);
+    let max=arr[0];
+
+    if(min==undefined && max==undefined){
+        min=null;
+        max=null;
+    }
+    console.log(`min:- ${min}\t max:- ${max}`);
+
+}
+minMAx1([]);
+
+
+//word_count from a string
+
+function wordCount(str){
+    return str.split(" ").length;
+}
+console.log(wordCount("Hello world"));
+
+//11n
+
+function countWord(str){
+    let countApple = 0;
+    let countGrape = 0;
+    let i=0;
+
+    while(i<str.length){
+        if(str[i]=='Apple'||str[i]=='apple'){
+            countApple+=1;
+        }else if(str[i]=='Grape'||str[i]=='grape'){
+            countGrape+=1;
+        }
+        i++;
+    }
+
+    let countFruit = {
+        Apple : countApple,
+        Grape : countGrape
+    };
+
+    console.log(countFruit);
+
+}
+countWord(['Apple','grape','Apple','apple']);
