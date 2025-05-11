@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video-01</title>
+</head>
+<body>
+  <script>
+    function addition(num1,num2){
+      let total = addTwo(num1,num2); 
+      if(num1 === 100 || num2 === 100){
+        console.log("one of the number is 100");
+        return true
+      }else if(total === 100){
+        console.log("the sum of the two numbers is 100");
+        return true
+      }else {
+        return total;
+      }
+    }
+    
+    function addTwo(a,b) {
+      return a+b;
+    }
+
+    console.log(addition(100,100))
+  </script>
+</body>
+</html>

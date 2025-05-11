@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9g</title>
+</head>
+<body>
+  <h1>Amazon Shopping Calculation</h1>
+  <input type="number" placeholder="enter price" class="price" onkeydown="if(event.key === 'Enter'){calculation()};">
+  <button class="calculate-button" onclick="calculation()">caluculate</button>
+  <p class="display-total"></p>
+  <script>
+    function calculation(){
+      let price = Number(document.querySelector('.price').value);
+      console.log(price);
+      if(price <= 0){
+        return document.querySelector('.display-total').innerHTML = 'Price cannot be negative or zero!';
+      }else if(price < 40){
+        price += 10;
+      }
+      let totalPrice = price.toFixed(2);
+      document.querySelector('.display-total').innerHTML = `Total price is : $${totalPrice}`;
+    }
+
+  </script>
+</body>
+</html>

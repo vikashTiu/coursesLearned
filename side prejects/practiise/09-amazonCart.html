@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Cart</title>
+</head>
+<body>
+  <h1>Amazon Cart</h1>
+  <p>
+    <button onclick="showQuantity();">Show Quantity</button>
+    <button onclick="add(1);">Add to Cart</button>
+    <button onclick="add(2);">+2</button>
+    <button onclick="add(3);">+3</button>
+    <button onclick="add(4);">+4</button>
+    <button onclick="add(5);">+5</button>
+
+    <button onclick="remove(1);">Remove from Cart</button>
+    <button onclick="remove(2);">-2</button>
+    <button onclick="remove(3);">-3</button>
+  </p><br>
+  <p class="display-cart-quantity"></p>
+
+
+  <script>
+
+    //object
+    const cart = {
+      cartQuantity: 0,
+    }
+    function showQuantity() {
+      console. log(cart.cartQuantity);
+      document.querySelector('.display-cart-quantity').innerHTML = `Cart Quantity: ${cart.cartQuantity}`;
+    }
+
+    function add(quantity){
+      cart.cartQuantity += quantity;
+      //console.log(cart.cartQuantity);
+      showQuantity();
+    }
+    function remove(quantity){
+      if((cart.cartQuantity - quantity) < 0){
+        console.log(cart.cartQuantity);
+        return document.querySelector('.display-cart-quantity').innerHTML = 'Cart quantity cannot be negative!';
+      }else {
+        cart.cartQuantity -= quantity;
+        showQuantity();
+      }
+    }  
+  </script>
+</body>
+</html>

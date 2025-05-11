@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09-Exercise</title>
+</head>
+<body>
+  <button onclick="console.log(document.querySelector('button').innerText)">9a</button>
+  <button class="button2" onclick="document.querySelector('.button2').innerText = 'job done!';">9b</button>
+  <br><br><br>
+  <button onclick="document.querySelector('.head-tail').innerHTML='you choose: heads';">heads</button>
+  <button onclick="document.querySelector('.head-tail').innerHTML='you choose: tails';">tails</button>
+  <br>
+  <p class="head-tail"></p>
+
+  <br><br><br>
+  <input type="text" placeholder="enter your name" class="name" onkeydown="if(event.key === 'Enter'){submit();}">
+  <button onclick="submit();">submit</button>
+
+  <p class="name-display"></p>
+
+  <script>
+    function submit(event){
+      const name =document.querySelector('.name').value;
+      console.log(name);
+      document.querySelector('.name-display').innerText = `Hello ${name}`;
+    }
+  </script>
+</body>
+</html>

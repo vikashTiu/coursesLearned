@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9h-Exercise</title>
+</head>
+<body>
+  <p>A function is triggered when the user releases a key in the input field.</p>
+  <p>A function to display updated line when the key is released.</p>
+  <input type="text" placeholder="enter sentence" class="sentence" onkeyup="display();">
+  <p class="display-on-web"></p>
+  <script>
+    function display() {
+      let sentence = document.querySelector('.sentence').value;
+      console.log(sentence);
+      document.querySelector('.display-on-web').innerHTML = sentence;
+    }
+
+  </script>
+</body>
+</html>

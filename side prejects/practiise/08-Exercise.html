@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08-Exercise</title>
+</head>
+<body>
+  
+  <script>
+    const product1 ={
+      name:'basketball' ,
+      price: 2095,
+      'Delivery-day': '3 days',
+    }
+    const product2 = {
+      name: 'football',
+      price: 3000,
+      'Delivery-day': '2 days',
+    }
+
+    const product3 = {
+      name: 'cricket bat',
+      price: 1200,
+      'Delivery-day': '10 days'
+    };
+
+    const product4 = {
+      name: 'volleyball',
+      price: 400,
+      'Delivery-day': '3 days',
+    };
+
+    const product5 ={
+      name: 'cricket bat',
+      price: 1200,
+      'Delivery-day': '10 days',
+    };
+
+    console.log(product1);
+    console.log(product1.price + 500);
+    console.log(product1['Delivery-day']);
+
+    //function for less expensive product 
+    function compare(product1,product2){
+      if(product1.price < product2.price){
+        console.log(`${product1.name} is less expensive than ${product2.name}`);
+      }else if(product1.price > product2.price){
+        console.log(`${product2.name} is less expensive than ${product1.name}`);
+      }else{
+        console.log(`${product1.name} and ${product2.name} are equally priced`);
+      }
+    }
+
+    compare(product1,product2);
+
+    function isSameProduct1(product1,product2){
+      if(product1.name === product2.name && product1.price === product2.price){
+        console.log(`${product1.name} and ${product2.name} are the same products`);
+      }else{
+        console.log(`${product1.name} and ${product2.name} are different products`);
+      }
+    }
+
+    function isSameProduct2(product1,product2){
+      if(product1.name === product2.name && product1.price === product2.price){
+        return true
+;      }else{
+        return false;
+      }
+    }
+
+
+    console.log(isSameProduct2(product3,product5));
+
+    //string to all lowercase
+    console.log('Good Morning'.toLowerCase());
+
+    //How to repeat strings many times?
+    console.log('test '.repeat(10));//no iteratioon of string in this case
+
+  </script>
+</body>
+</html>

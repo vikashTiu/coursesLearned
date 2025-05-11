@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+  <script>
+
+
+    const product = {
+      name: "Laptop",
+      "owner-name": "Vikash",
+      price: 1000,
+      brancd: "APPLE",
+      model: "MacBook Pro",
+      date:{
+        mfd : "2023-01-01",
+        exp : "2025-01-01",
+        warranty: "2 years"
+      },
+      ["purchased-from"] : "Amazon",
+      rating : {
+        stars : 4.4,
+        reviews : 980
+      },
+      //function inside object
+      fun : function function1 (){
+        console.log("This is a function inside object");
+        //alert("function inside object");
+      },
+    }
+    console.log(product);
+    console.log(product.date.warranty);
+    //alert(typeof console);
+    console.log(product["name"]);
+    console.log(product["owner-name"]);
+    console.log(product["purchased-from"]);
+    console.log(product.rating.stars);
+    product.fun();
+
+    //Method : object + function
+
+    //JSoN (JavaScript Object Notation)
+    //JSON is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate.
+    const jsonString = JSON.stringify(product);//convert onject to JSON string
+    console.log(jsonString);
+    console.log(typeof jsonString);
+
+    //convert JSON string to object
+    const jsObject = JSON.parse(jsonString);
+    console.log(jsObject);
+    console.log(typeof jsObject);
+
+    //string functions
+    console.log("hello".length);
+    console.log("hello in upper-case".toUpperCase());//javascript converts the string into object and then apply the function
+    
+    const object1 = {
+      message: 'hii'
+    };
+    console.log(object1.message);
+
+    //reference of object1
+    const object2 = object1;//object2 is reference to object1
+    object2.message = 'hello everyone'// changing the value of object2 will alse change the value of onject1
+    console.log(object2.message);
+    console.log(object1.message);
+
+
+    //comparing objects
+    const object3 = {
+      message: 'hello everyone',
+      name : 'Vikash',
+    };
+    const {name}= object3;
+
+    console.log(object1 === object2);//object with same references
+    console.log(object1 === object3);//objects with different references
+
+    //deconstructing
+    const object4 = {
+      message: 'welcome',
+      rent: 1000
+    };
+    const { message , rent} = object4;
+    console.log(message);
+    console.log(rent);
+
+    //shorthand method
+    const object5 ={
+      message,
+      rent,
+      name,
+      /*
+      method : function func1(){
+        console.log("this is a method inside object5");
+      },
+      */
+      //shorthand method
+      method(){
+        console.log("This is a function inside object5");
+      },
+    }
+    console.log(object5);
+    object5.method();
+    
+    
+  </script>
+</body>
+</html>

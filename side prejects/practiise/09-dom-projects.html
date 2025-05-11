@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM_PROJECTS</title>
+  <style>
+    /* General body styling */
+    
+
+    /* Styling for the inline container */
+    .inline-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Button styling */
+    button {
+      padding: 10px 20px ;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #ff0015;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .is-subscribed {
+      background-color:rgb(235, 235, 235);
+      color: black;
+    }
+
+    button:hover {
+      background-color: #ff000063;
+    }
+
+    button:active {
+      background-color: #ba020288;
+    }
+
+    /* Input field styling */
+    input.price {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    /* Heading styling */
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Display total styling */
+  </style>
+</head>
+<body>
+  <div class="inline-container">
+    <p>YouTube subscribe button :</p>
+    <button class="js-button" onclick="
+        subscribe();
+      ">subscribe</button>
+  </div>
+
+  <h1>Amazon Shopping Calculator</h1>
+  <input placeholder="enter price" class="price" 
+        onkeydown="
+                console.log(event.key);
+                if(event.key === 'Enter'){
+                  calculation();
+                }
+                
+                ">
+  <button onclick="calculation();">calclate</button>
+  <br>
+  <p class="display-total"></p>
+
+  <script>
+    //console.log(document.querySelector('.js-button').innerHTML); // selecting the button and getting the innerHTML
+    //function for subscribe button
+    function subscribe() {
+      const subs = document.querySelector('.js-button').innerHTML;  
+        if (subs === 'subscribe'){
+          document.querySelector('.js-button').innerHTML = 'subscribed';
+          console.log('You have subscribed!');
+          document.querySelector('.js-button').classList.add('is-subscribed');//adding class to the button
+        } else if(subs === 'subscribed'){
+          document.querySelector('.js-button').innerHTML = 'subscribe';
+          console.log('You have un-subscribed!');
+          document.querySelector('.js-button').classList.remove('is-subscribed');//removing class from the button
+        }  
+    }
+
+
+    //Amazon shopping calculator
+ 
+
+    //function to calculate
+
+    function calculation() {
+      let price = Number(document.querySelector('.price').value);
+
+      if (price < 40){
+        price = price + 10;
+      }
+      console.log(price);
+
+      //display total price
+      document.querySelector('.display-total').innerHTML = `Shiping Charge : $10 ( below $40) <br>  Total price : $${price}`;
+    }
+  </script>
+</body>
+</html>

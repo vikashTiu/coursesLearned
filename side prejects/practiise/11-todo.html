@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo-practise-1</title>
+</head>
+<body>
+  <p>Todo List Prctise 1</p>
+  <input type="text" class="todo-input" placeholder="Add a new todo" onkeydown="if(event.key === 'Enter'){insertTodo();}">
+  <button onclick="insertTodo();">add</button>
+  <button onclick="
+    todo.splice(0,1);
+    console.log(todo);
+  ">delete</button>
+  
+  <p class="list"></p>
+
+  <script>
+    const todoInput = document.querySelector('.todo-input');
+    const todo = [];
+    function insertTodo(){
+      const todoValue = todoInput.value;
+      if(todoValue){
+        todo.push(todoValue);
+        console.log(todo);
+        todoInput.value = '';
+      }else{
+        alert('Please enter a todo item!'); 
+      }
+
+      // Display the todo list
+      const displayList= [];
+      for(let i=0; i<todo.length; i++){
+        displayList.push(todo[i]);
+      }
+      document.querySelector('.list').innerHTML = displayList.join(`<br>`);
+    }
+
+    
+  </script>
+</body>
+</html>
